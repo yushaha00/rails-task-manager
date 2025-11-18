@@ -1,0 +1,20 @@
+<%= form_with model: task, local: true do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :details %>
+    <%= f.text_area :details %>
+  </div>
+
+  <% if task.persisted? %>
+    <div>
+      <%= f.label :completed %>
+      <%= f.check_box :completed %>
+    </div>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
